@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #ff2a2a;
+  --color-secondary: #ffd700;
+  --color-dark: #0f1015;
+  --color-charcoal: #1a1b23;
+  --font-inter: 'Inter', sans-serif;
+  --font-outfit: 'Outfit', sans-serif;
+}
+
+@layer utilities {
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  }
+
+  .glass-interactive {
+    @apply transition-all duration-300;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  }
+  
+  .glass-interactive:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 12px 40px 0 rgba(255, 42, 42, 0.15);
+    transform: translateY(-4px);
+  }
+
+  .neon-text-glow {
+    text-shadow: 0 0 15px rgba(255, 42, 42, 0.6), 0 0 25px rgba(255, 42, 42, 0.4);
+  }
+
+  .neon-border-glow {
+    box-shadow: inset 0 0 10px rgba(255, 42, 42, 0.2), 0 0 15px rgba(255, 42, 42, 0.3);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-dark);
+  color: white;
+  font-family: var(--font-inter);
+  background-image: 
+    linear-gradient(rgba(15, 16, 21, 0.50), rgba(15, 16, 21, 0.80)),
+    url('/restaurant_bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0;
+  min-height: 100vh;
+}
